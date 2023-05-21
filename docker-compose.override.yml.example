@@ -10,7 +10,7 @@ services:
   campaign:
     environment:
       XDEBUG_CONFIG: "client_host=172.17.0.1" # find the ip of your host machine within docker network
-      PHP_IDE_CONFIG: "serverName=campaign.remp.press"
+      PHP_IDE_CONFIG: "serverName=campaign.t99ltd.info"
 
     # Add these volumes only after initial installation (containers would otherwise override each other's cache).
     # Also make sure, the host machine folders already exist; otherwise Docker would create them with root owner,
@@ -22,7 +22,7 @@ services:
   mailer:
     environment:
       XDEBUG_CONFIG: "client_host=172.17.0.1" # find the ip of your host machine within docker network
-      PHP_IDE_CONFIG: "serverName=mailer.remp.press"
+      PHP_IDE_CONFIG: "serverName=mailer.t99ltd.info"
 
     # Add these volumes only after initial installation (containers would otherwise override each other's cache).
     # Also make sure, the host machine folders already exist; otherwise Docker would create them with root owner,
@@ -34,7 +34,7 @@ services:
   beam:
     environment:
       XDEBUG_CONFIG: "client_host=172.17.0.1" # find the ip of your host machine within docker network
-      PHP_IDE_CONFIG: "serverName=beam.remp.press"
+      PHP_IDE_CONFIG: "serverName=beam.t99ltd.info"
 
     # Add these volumes only after initial installation (containers would otherwise override each other's cache).
     # Also make sure, the host machine folders already exist; otherwise Docker would create them with root owner,
@@ -46,7 +46,7 @@ services:
   sso:
     environment:
       XDEBUG_CONFIG: "client_host=172.17.0.1" # find the ip of your host machine within docker network
-      PHP_IDE_CONFIG: "serverName=sso.remp.press"
+      PHP_IDE_CONFIG: "serverName=sso.t99ltd.info"
 
     # Add these volumes only after initial installation (containers would otherwise override each other's cache).
     # Also make sure, the host machine folders already exist; otherwise Docker would create them with root owner,

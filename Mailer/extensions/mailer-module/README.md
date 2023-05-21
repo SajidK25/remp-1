@@ -658,7 +658,7 @@ By default application includes implementation of:
 - [SmtpMailer](./src/Models/Mailer/SmtpMailer.php)
 - [MailgunMailer](./src/Models/Mailer/MailgunMailer.php)
 
-You can select the default mailer on the settings page: http://mailer.remp.press/settings/
+You can select the default mailer on the settings page: http://mailer.t99ltd.info/settings/
 
 #### Mailer integration
 
@@ -947,7 +947,7 @@ You can see that you override here two services with your own implementation. Th
 uses default Nette implementation and overrides custom REMP SSO implementation defined in `config.neon`.
 
 From now on the authentication is not done by redirecting user to SSO but by using default sign in
-screen available at http://mailer.remp.press/sign/in.
+screen available at http://mailer.t99ltd.info/sign/in.
 
 ### Error tracking
 
@@ -969,7 +969,7 @@ By default, debug mode is enabled only when `ENV` is set to `local`.
 
 ### Healthcheck
 
-Route `http://mailer.remp.press/health` provides health check for database, Redis, storage and logging.
+Route `http://mailer.t99ltd.info/health` provides health check for database, Redis, storage and logging.
 
 Returns:
 
@@ -1019,7 +1019,7 @@ Steps:
 
 ## API Documentation
 
-All examples use `http://mailer.remp.press` as a base domain. Please change the host to the one you use
+All examples use `http://mailer.t99ltd.info` as a base domain. Please change the host to the one you use
 before executing the examples.
 
 All examples use `XXX` as a default value for authorization token, please replace it with the
@@ -1062,7 +1062,7 @@ option.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/user-registered \
+  http://mailer.t99ltd.info/api/v1/users/user-registered \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'email=admin%40example.com&user_id=12345'
@@ -1120,7 +1120,7 @@ option.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/bulk-user-registered \
+  http://mailer.t99ltd.info/api/v1/users/bulk-user-registered \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1149,7 +1149,7 @@ Response:
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/bulk-user-registered \
+  http://mailer.t99ltd.info/api/v1/users/bulk-user-registered \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1209,7 +1209,7 @@ API call that checks if user is unsubscribed from given newsletter list.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/is-unsubscribed \
+  http://mailer.t99ltd.info/api/v1/users/is-unsubscribed \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1255,7 +1255,7 @@ API call that checks if user is subscribed from given newsletter list (and optio
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/is-subscribed \
+  http://mailer.t99ltd.info/api/v1/users/is-subscribed \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1304,7 +1304,7 @@ API call to get subscribed newsletter lists and their variants.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/user-preferences \
+  http://mailer.t99ltd.info/api/v1/users/user-preferences \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1386,7 +1386,7 @@ Please visit `/list/new` to create a newsletter via web admin.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/subscribe \
+  http://mailer.t99ltd.info/api/v1/users/subscribe \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1477,7 +1477,7 @@ of emails won't be available.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/un-subscribe \
+  http://mailer.t99ltd.info/api/v1/users/un-subscribe \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1568,7 +1568,7 @@ Bulk subscribe allows subscribing and unsubscribing multiple users in one batch.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/bulk-subscribe \
+  http://mailer.t99ltd.info/api/v1/users/bulk-subscribe \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1614,7 +1614,7 @@ Response:
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/bulk-subscribe \
+  http://mailer.t99ltd.info/api/v1/users/bulk-subscribe \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1688,7 +1688,7 @@ If it's valid, you can automatically log user in based on the ID/email the endpo
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/check-token \
+  http://mailer.t99ltd.info/api/v1/users/check-token \
   -H 'Content-Type: application/json' \
   -d '{
 	"token": "206765522b71289504ae766389bf741x"
@@ -1728,7 +1728,7 @@ subscription information is being stored on *user_id*/*email* level.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/email-changed \
+  http://mailer.t99ltd.info/api/v1/users/email-changed \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'original_email=admin%40example.com&new_email=user%40example.com'
@@ -1772,7 +1772,7 @@ Returns number of emails matching the status based on given timeframe. Count is 
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/logs-count-per-status \
+  http://mailer.t99ltd.info/api/v1/users/logs-count-per-status \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1837,7 +1837,7 @@ Returns mail logs based on given criteria.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/logs \
+  http://mailer.t99ltd.info/api/v1/users/logs \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1929,7 +1929,7 @@ Removes all user data for given email
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/users/delete \
+  http://mailer.t99ltd.info/api/v1/users/delete \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -1976,7 +1976,7 @@ new *email* template via API.
 
 ```shell
 curl -X GET \
-  http://mailer.remp.press/api/v1/mailers/mail-types?public_listing=1&code=demo-weekly-newsletter \
+  http://mailer.t99ltd.info/api/v1/mailers/mail-types?public_listing=1&code=demo-weekly-newsletter \
   -H 'Authorization: Bearer XXX'
 ```
 
@@ -2030,7 +2030,7 @@ new *email* template via API.
 
 ```shell
 curl -X GET \
-  http://mailer.remp.press/api/v1/mailers/mail-types?public_listing=1&code[]=demo-weekly-newsletter \
+  http://mailer.t99ltd.info/api/v1/mailers/mail-types?public_listing=1&code[]=demo-weekly-newsletter \
   -H 'Authorization: Bearer XXX'
 ```
 
@@ -2084,7 +2084,7 @@ new *email* template via API. Compared to v2, v3 returns all important variant a
 
 ```shell
 curl -X GET \
-  http://mailer.remp.press/api/v1/mailers/mail-types?public_listing=1&code[]=demo-weekly-newsletter \
+  http://mailer.t99ltd.info/api/v1/mailers/mail-types?public_listing=1&code[]=demo-weekly-newsletter \
   -H 'Authorization: Bearer XXX'
 ```
 
@@ -2129,7 +2129,7 @@ Get available categories of newsletters.
 
 ```shell
 curl -X GET \
-  http://mailer.remp.press/api/v1/mailers/mail-type-categories \
+  http://mailer.t99ltd.info/api/v1/mailers/mail-type-categories \
   -H 'Authorization: Bearer XXX'
 ```
 
@@ -2195,7 +2195,7 @@ Field `id` has higher precedence in finding the existing record.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/mailers/mail-type-upsert \
+  http://mailer.t99ltd.info/api/v1/mailers/mail-type-upsert \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -b PHPSESSID=cfa9527535e31a0ccb678f792299b0d2 \
@@ -2254,7 +2254,7 @@ Get available mail templates. Possible filtering by `mail_type_code` to get only
 
 ```shell
 curl -X GET \
-  http://mailer.remp.press/api/v1/mailers/mail-templates \
+  http://mailer.t99ltd.info/api/v1/mailers/mail-templates \
   -H 'Authorization: Bearer XXX'
 ```
 
@@ -2302,7 +2302,7 @@ Gets list of available email templates.
 
 ```shell
 curl --location --request GET \
-'mailer.remp.press/api/v1/mailers/templates?mail_type_codes[]=onboarding&mail_type_codes[]=system&with_mail_types=true&page=1&limit=5' \
+'mailer.t99ltd.info/api/v1/mailers/templates?mail_type_codes[]=onboarding&mail_type_codes[]=system&with_mail_types=true&page=1&limit=5' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX'
@@ -2358,7 +2358,7 @@ Creates new email template. Endpoint complements creation of template via web in
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/mailers/templates \
+  http://mailer.t99ltd.info/api/v1/mailers/templates \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'name=Breaking%20News%20-%20Trump%20elected%20president&code=20161108_breaking_news_trump_elected_president&description=Generated%20by%20CLI%20script&mail_layout_id=1&mail_type_code=alerts&from=info%40dennikn.sk&subject=Breaking%20News%20-%20Trump%20elected%20president&template_text=This%20is%20a%20demo%20text%20of%20email&template_html=%3Cp%3EThis%20is%20a%20%3Cstrong%3Edemo%3C%2Fstrong%3E%20text%20of%20email%3C%2Fp%3E'
@@ -2391,7 +2391,7 @@ parameters based on the used *generator*. It complements generation of HTML/text
 
 ```shell
 curl -X GET \
-  http://mailer.remp.press/api/v1/mailers/generator-templates \
+  http://mailer.t99ltd.info/api/v1/mailers/generator-templates \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/x-www-form-urlencoded'
 ```
@@ -2440,7 +2440,7 @@ The command uses *generator template* linked to the *UrlParserGenerator*.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/mailers/generate-mail \
+  http://mailer.t99ltd.info/api/v1/mailers/generate-mail \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'source_template_id=17&articles=https%3A%2F%2Fdennikn.sk%2F1405858%2Fkedysi-bojovala-za-mier-v-severnom-irsku-teraz-chce-zastavit-brexit%2F%3Fref%3Dtit%0Ahttps%3A%2F%2Fdennikn.sk%2F1406263%2Fpodpora-caputovej-je-tazky-hriech-tvrdil-arcibiskup-predstavitelia-cirkvi-odsudili-aj-radicovu-pred-desiatimi-rokmi%2F%3Fref%3Dtit&footer=%20&intro=%20&rtm_campaign=%20'
@@ -2480,7 +2480,7 @@ Gets rendered email content by code. Both HTML and text variants are provided.
 
 ```shell
 curl --location --request GET \
-'mailer.remp.press/api/v1/mailers/render-template?code=demo-email' \
+'mailer.t99ltd.info/api/v1/mailers/render-template?code=demo-email' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX'
@@ -2511,7 +2511,7 @@ Lists all available segments that can be used in *jobs*.
 
 ```shell
 curl -X GET \
-  http://mailer.remp.press/api/v1/segments/list \
+  http://mailer.t99ltd.info/api/v1/segments/list \
   -H 'Authorization: Bearer XXX'
 ```
 
@@ -2560,7 +2560,7 @@ Endpoint complements manual job creation via web interface.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/mailers/jobs \
+  http://mailer.t99ltd.info/api/v1/mailers/jobs \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'template_id=24832&segment_code=users_with_print_in_past&segment_provider=crm-segment&context=123&mail_type_variant_code=variant-1'
@@ -2609,7 +2609,7 @@ that generator makes.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/mailers/preprocess-generator-parameters \
+  http://mailer.t99ltd.info/api/v1/mailers/preprocess-generator-parameters \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -2641,7 +2641,7 @@ Response:
         "newsfilter_html": " -- Wordpress text content --",
         "source_template_id": 20
     },
-    "generator_post_url": "http://mailer.remp.press/mail-generator/"
+    "generator_post_url": "http://mailer.t99ltd.info/mail-generator/"
 }
 ```
 
@@ -2682,7 +2682,7 @@ The example serves only for debugging purposes, you shouldn't really need to cal
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/mailers/mailgun \
+  http://mailer.t99ltd.info/api/v1/mailers/mailgun \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/x-www-form-urlencoded' \
   -d 'mail_sender_id=foo&timestamp=1529006854&token=a8ce0edb2dd8301dee6c2405235584e45aa91d1e9f979f3de0&signature=d2271d12299f6592d9d44cd9d250f0704e4674c30d79d07c47a66f95ce71cf55&recipient=admin%40example.com&event=opened'
@@ -2738,7 +2738,7 @@ introducing new version of webhooks.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v2/mailers/mailgun \
+  http://mailer.t99ltd.info/api/v2/mailers/mailgun \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -2798,7 +2798,7 @@ Endpoint for sending single email without creating a job. It should be primarily
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/mailers/send-email \
+  http://mailer.t99ltd.info/api/v1/mailers/send-email \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{
@@ -2839,7 +2839,7 @@ Creates new mail type variant.
 
 ```shell
 curl -X POST \
-  http://mailer.remp.press/api/v1/mailers/mail-type-variants \
+  http://mailer.t99ltd.info/api/v1/mailers/mail-type-variants \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
   -d '{

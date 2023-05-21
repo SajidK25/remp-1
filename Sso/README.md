@@ -220,7 +220,7 @@ HTTP status codes are based on RFC 6750.
 
 ## Healthcheck
 
-Route `http://sso.remp.press/health` provides health check for database, Redis, storage and logging.
+Route `http://sso.t99ltd.info/health` provides health check for database, Redis, storage and logging.
 
 Returns:
 

@@ -19,14 +19,14 @@ services:
     networks:
       default:
         aliases:
-          - "campaign.remp.press"
-          - "mailer.remp.press"
-          - "sso.remp.press"
-          - "beam.remp.press"
-          - "tracker.beam.remp.press"
-          - "segments.beam.remp.press"
-          - "mailhog.remp.press"
-          - "kibana.beam.remp.press"
+          - "campaign.t99ltd.info"
+          - "mailer.t99ltd.info"
+          - "sso.t99ltd.info"
+          - "beam.t99ltd.info"
+          - "tracker.beam.t99ltd.info"
+          - "segments.beam.t99ltd.info"
+          - "mailhog.t99ltd.info"
+          - "kibana.beam.t99ltd.info"
     command: /bin/bash -c "envsubst '$$NGINX_PORT' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
 
   mysql:
@@ -62,7 +62,7 @@ services:
   mailhog:
     image: "mailhog/mailhog:v1.0.0"
     environment:
-      MH_HOSTNAME: "mailhog.remp.press"
+      MH_HOSTNAME: "mailhog.t99ltd.info"
     restart: "unless-stopped"
 
   adminer:
@@ -81,12 +81,12 @@ services:
   # campaign
 
   campaign:
-    domainname: "campaign.remp.press"
+    domainname: "campaign.t99ltd.info"
     hostname: "campaign"
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       APP_NAME: "Campaign"
-      PHP_IDE_CONFIG: "serverName=campaign.remp.press"
+      PHP_IDE_CONFIG: "serverName=campaign.t99ltd.info"
     build:
       context: "./Docker/php"
       args:
@@ -109,12 +109,12 @@ services:
   # mailer
 
   mailer:
-    domainname: "mailer.remp.press"
+    domainname: "mailer.t99ltd.info"
     hostname: "mailer"
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       APP_NAME: "Mailer"
-      PHP_IDE_CONFIG: "serverName=mailer.remp.press"
+      PHP_IDE_CONFIG: "serverName=mailer.t99ltd.info"
     build:
       context: "./Docker/php"
       args:
@@ -139,12 +139,12 @@ services:
   # sso
 
   sso:
-    domainname: "sso.remp.press"
+    domainname: "sso.t99ltd.info"
     hostname: "sso"
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       APP_NAME: "Sso"
-      PHP_IDE_CONFIG: "serverName=sso.remp.press"
+      PHP_IDE_CONFIG: "serverName=sso.t99ltd.info"
     build:
       context: "./Docker/php"
       args:
@@ -167,12 +167,12 @@ services:
   # beam
 
   beam:
-    domainname: "beam.remp.press"
+    domainname: "beam.t99ltd.info"
     hostname: "beam"
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       APP_NAME: "Beam"
-      PHP_IDE_CONFIG: "serverName=beam.remp.press"
+      PHP_IDE_CONFIG: "serverName=beam.t99ltd.info"
     build:
       context: "./Docker/php"
       args:

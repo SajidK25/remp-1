@@ -168,7 +168,7 @@ You can test tracking new `print_delivery` by running following command (change 
 
 ```bash
 curl -X POST \
-  http://tracker.beam.remp.press/track/entity \
+  http://tracker.beam.t99ltd.info/track/entity \
   -H 'Content-Type: application/json' \
   -d '{
   "entity_def": {
@@ -288,7 +288,7 @@ for providing metadata for Articles and Conversions that need to be stored persi
 
 *Note: All Elasticsearch data should be always treated as non-persistent and backed up if necessary.*
 
-All examples use `http://beam.remp.press` as a base domain. Please change the host to the one you use
+All examples use `http://beam.t99ltd.info` as a base domain. Please change the host to the one you use
 before executing the examples.
 
 All examples use `XXX` as a default value for authorization token, please replace it with the
@@ -365,7 +365,7 @@ data related to Beam (e.g. A/B testing of titles).
 
 ```shell
 curl -X POST \
-  http://beam.remp.press/api/articles/upsert \
+  http://beam.t99ltd.info/api/articles/upsert \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
@@ -439,7 +439,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/articles/upsert ", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/articles/upsert ", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -562,7 +562,7 @@ Your CMS should track all article-related changes to Beam so Beam knows about th
 
 ```shell
 curl -X POST \
-  http://beam.remp.press/api/v2/articles/upsert \
+  http://beam.t99ltd.info/api/v2/articles/upsert \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
@@ -666,7 +666,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/v2/articles/upsert ", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/v2/articles/upsert ", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -763,7 +763,7 @@ List already read articles based on filter.
 
 ```shell
 curl -X POST \
-  http://beam.remp.press/api/articles/read \
+  http://beam.t99ltd.info/api/articles/read \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
@@ -799,7 +799,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/articles/read ", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/articles/read ", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -864,7 +864,7 @@ tracked via Tracker API (see `/track/commerce` definition in Tracker's `swagger.
 
 ```shell
 curl -X POST \
-  http://beam.remp.press/api/conversions/upsert \
+  http://beam.t99ltd.info/api/conversions/upsert \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
@@ -912,7 +912,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/conversions/upsert ", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/conversions/upsert ", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -987,7 +987,7 @@ You can filter articles by content type, sections, authors, tags or tag categori
 <summary>curl</summary>
 
 ```shell
-curl --location --request POST 'http://beam.remp.press/api/articles/top' \
+curl --location --request POST 'http://beam.t99ltd.info/api/articles/top' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX' \
@@ -1045,7 +1045,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/articles/top", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/articles/top", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1119,7 +1119,7 @@ You can combine multiple filters for each filter category. Filters in and betwee
 <summary>curl</summary>
 
 ```shell
-curl --location --request POST 'http://beam.remp.press/api/v2/articles/top' \
+curl --location --request POST 'http://beam.t99ltd.info/api/v2/articles/top' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX' \
@@ -1178,7 +1178,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/v2/articles/top", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/v2/articles/top", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1246,7 +1246,7 @@ You can filter authors by content type, sections, tags or tag categories.
 <summary>curl</summary>
 
 ```shell
-curl --location --request POST 'http://beam.remp.press/api/authors/top' \
+curl --location --request POST 'http://beam.t99ltd.info/api/authors/top' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX' \
@@ -1298,7 +1298,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/authors/top", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/authors/top", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1361,7 +1361,7 @@ You can combine multiple filters for each filter category. Filters in and betwee
 <summary>curl</summary>
 
 ```shell
-curl --location --request POST 'http://beam.remp.press/api/v2/authors/top' \
+curl --location --request POST 'http://beam.t99ltd.info/api/v2/authors/top' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX' \
@@ -1413,7 +1413,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/v2/authors/top", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/v2/authors/top", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1474,7 +1474,7 @@ You can filter tags by content type, sections, authors or tag categories.
 <summary>curl</summary>
 
 ```shell
-curl --location --request POST 'http://beam.remp.press/api/tags/top' \
+curl --location --request POST 'http://beam.t99ltd.info/api/tags/top' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX' \
@@ -1526,7 +1526,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/tags/top", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/tags/top", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1599,7 +1599,7 @@ You can combine multiple filters for each filter category. Filters in and betwee
 <summary>curl</summary>
 
 ```shell
-curl --location --request POST 'http://beam.remp.press/api/v2/tags/top' \
+curl --location --request POST 'http://beam.t99ltd.info/api/v2/tags/top' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX' \
@@ -1651,7 +1651,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/v2/tags/top", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/v2/tags/top", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1728,7 +1728,7 @@ You can combine multiple filters for each filter category. Filters in and betwee
 <summary>curl</summary>
 
 ```shell
-curl --location --request POST 'http://beam.remp.press/api/pageviews/histogram' \
+curl --location --request POST 'http://beam.t99ltd.info/api/pageviews/histogram' \
 --header 'Content-Type: application/json' \
 --header 'Accept: application/json' \
 --header 'Authorization: Bearer XXX' \
@@ -1787,7 +1787,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/pageviews/histogram", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/pageviews/histogram", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1835,7 +1835,7 @@ Returns list of articles specified by ids or external ids.
 
 ```shell
 curl -X GET \
-  http://beam.remp.press/api/articles?external_ids=123,231 \
+  http://beam.t99ltd.info/api/articles?external_ids=123,231 \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
 ```
@@ -1854,7 +1854,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/articles?external_ids=123,231", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/articles?external_ids=123,231", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1912,7 +1912,7 @@ Returns list of authors.
 
 ```shell
 curl -X GET \
-  http://beam.remp.press/api/authors \
+  http://beam.t99ltd.info/api/authors \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
 ```
@@ -1931,7 +1931,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/authors", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/authors", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -1986,7 +1986,7 @@ Returns list of conversions.
 
 ```shell
 curl -X GET \
-  http://beam.remp.press/api/conversions?conversion_from=2018-06-05T06:03:05Z \
+  http://beam.t99ltd.info/api/conversions?conversion_from=2018-06-05T06:03:05Z \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
 ```
@@ -2005,7 +2005,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/conversions?conversion_from=2018-06-05T06:03:05Z", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/conversions?conversion_from=2018-06-05T06:03:05Z", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -2060,7 +2060,7 @@ Returns list of sections.
 
 ```shell
 curl -X GET \
-  http://beam.remp.press/api/sections \
+  http://beam.t99ltd.info/api/sections \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
 ```
@@ -2079,7 +2079,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/sections", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/sections", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -2132,7 +2132,7 @@ Returns list of tags.
 
 ```shell
 curl -X GET \
-  http://beam.remp.press/api/tags \
+  http://beam.t99ltd.info/api/tags \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
 ```
@@ -2151,7 +2151,7 @@ $context = stream_context_create([
         ]
     ]
 );
-$response = file_get_contents("http://beam.remp.press/api/tags", false, $context);
+$response = file_get_contents("http://beam.t99ltd.info/api/tags", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -2337,7 +2337,7 @@ Include following snippet into your pages and update `rempConfig` object as need
     });
 
     // change URL to location of BEAM remplib.js
-    load("http://beam.remp.press/assets/lib/js/remplib.js");
+    load("http://beam.t99ltd.info/assets/lib/js/remplib.js");
 })(window, document);
 
 // configuration
@@ -2359,7 +2359,7 @@ var rempConfig = {
     browserId: String,
 
     // optional, controls where cookies (UTM parameters of visit) are stored
-    cookieDomain: ".remp.press",
+    cookieDomain: ".t99ltd.info",
 
     // optional, controls which type of storage should be used by default (`local_storage` or `cookie`)
     // default is `local_storage`
@@ -2390,7 +2390,7 @@ var rempConfig = {
     // required, Tracker API specific options
     tracker: {
         // required, URL location of BEAM Tracker
-        url: "http://tracker.beam.remp.press",
+        url: "http://tracker.beam.t99ltd.info",
 
         // optional time spent measuring (disabled by default)
         // if enabled, tracks time spent on current page
@@ -2625,7 +2625,7 @@ rempConfig.iota = {
 if (remplib.iota.init(t), !document.getElementById("remplib-iota-loader")) {
     var e = document.createElement("script");
     // change URL to location of BEAM iota.js
-    e.src = "http://beam.remp.press/assets/iota/js/iota.js", e.id = "remplib-iota-loader", document.body.appendChild(e)
+    e.src = "http://beam.t99ltd.info/assets/iota/js/iota.js", e.id = "remplib-iota-loader", document.body.appendChild(e)
 }
 ```
 
@@ -2672,18 +2672,18 @@ Event groups, categories and actions can contain words like _pageviews_, _banner
 blocked by ad/track blockers. As they're being used for loading the statistics, URL being accessed can sometimes
 look like this:
 
-`https://beam.remp.press/api/journal/pageviews/categories/pageview/actions`
+`https://beam.t99ltd.info/api/journal/pageviews/categories/pageview/actions`
 
 
 #### How to solve
 
 Add filter to your blocker which allows these calls.
 
-_Example of uBlock Origin / AdBlockPlus syntax filter_ if your BEAM domain is `beam.remp.press`:
+_Example of uBlock Origin / AdBlockPlus syntax filter_ if your BEAM domain is `beam.t99ltd.info`:
 
 ```
 ! REMP - allow BEAM journal API calls with blocked words (eg 'pageviews', 'banners', ...)
-@@||beam.remp.press/api/journal/*$xmlhttprequest,domain=beam.remp.press
+@@||beam.t99ltd.info/api/journal/*$xmlhttprequest,domain=beam.t99ltd.info
 ```
 
 ### Elasticsearch shards are getting too big
@@ -2814,7 +2814,7 @@ create an alias for this rolled over index so also "reading" alias (e.g. `pagevi
 
 ## Healthcheck
 
-Route `http://beam.remp.press/health` provides health check for database, Redis, storage and logging.
+Route `http://beam.t99ltd.info/health` provides health check for database, Redis, storage and logging.
 
 Returns:
 
