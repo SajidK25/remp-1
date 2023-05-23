@@ -7,6 +7,8 @@ services:
     image: "nginx:stable"
     environment:
       NGINX_PORT: "[::]:80"
+    ports:
+      - 80:80
     volumes:
       - ".:/var/www/html:rw"
       - "./Docker/nginx/nginx.conf:/etc/nginx/conf.d/default.template:ro"
@@ -19,14 +21,14 @@ services:
     networks:
       default:
         aliases:
-          - "campaign.remp.press"
-          - "mailer.remp.press"
-          - "sso.remp.press"
-          - "beam.remp.press"
-          - "tracker.beam.remp.press"
-          - "segments.beam.remp.press"
-          - "mailhog.remp.press"
-          - "kibana.beam.remp.press"
+          - "campaign.subscription.agora.md"
+          - "mailer.subscription.agora.md"
+          - "sso.subscription.agora.md"
+          - "beam.subscription.agora.md"
+          - "tracker.beam.subscription.agora.md"
+          - "segments.beam.subscription.agora.md"
+          - "mailhog.subscription.agora.md"
+          - "kibana.beam.subscription.agora.md"
     command: /bin/bash -c "envsubst '$$NGINX_PORT' < /etc/nginx/conf.d/default.template > /etc/nginx/conf.d/default.conf && exec nginx -g 'daemon off;'"
 
   mysql:
@@ -62,7 +64,7 @@ services:
   mailhog:
     image: "mailhog/mailhog:v1.0.0"
     environment:
-      MH_HOSTNAME: "mailhog.remp.press"
+      MH_HOSTNAME: "mailhog.subscription.agora.md"
     restart: "unless-stopped"
 
   adminer:
@@ -81,12 +83,12 @@ services:
   # campaign
 
   campaign:
-    domainname: "campaign.remp.press"
+    domainname: "campaign.subscription.agora.md"
     hostname: "campaign"
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       APP_NAME: "Campaign"
-      PHP_IDE_CONFIG: "serverName=campaign.remp.press"
+      PHP_IDE_CONFIG: "serverName=campaign.subscription.agora.md"
     build:
       context: "./Docker/php"
       args:
@@ -109,12 +111,12 @@ services:
   # mailer
 
   mailer:
-    domainname: "mailer.remp.press"
+    domainname: "mailer.subscription.agora.md"
     hostname: "mailer"
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       APP_NAME: "Mailer"
-      PHP_IDE_CONFIG: "serverName=mailer.remp.press"
+      PHP_IDE_CONFIG: "serverName=mailer.subscription.agora.md"
     build:
       context: "./Docker/php"
       args:
@@ -139,12 +141,12 @@ services:
   # sso
 
   sso:
-    domainname: "sso.remp.press"
+    domainname: "sso.subscription.agora.md"
     hostname: "sso"
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       APP_NAME: "Sso"
-      PHP_IDE_CONFIG: "serverName=sso.remp.press"
+      PHP_IDE_CONFIG: "serverName=sso.subscription.agora.md"
     build:
       context: "./Docker/php"
       args:
@@ -167,12 +169,12 @@ services:
   # beam
 
   beam:
-    domainname: "beam.remp.press"
+    domainname: "beam.subscription.agora.md"
     hostname: "beam"
     user: "${UID:-1000}:${GID:-1000}"
     environment:
       APP_NAME: "Beam"
-      PHP_IDE_CONFIG: "serverName=beam.remp.press"
+      PHP_IDE_CONFIG: "serverName=beam.subscription.agora.md"
     build:
       context: "./Docker/php"
       args:

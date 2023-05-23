@@ -365,7 +365,7 @@
 - Fixed broken new email template page when no layout or newsletter list was defined.
 - Added `SimpleAuthenticator`, which keeps plain list of emails and passwords that are valid to log in. Mailer can use this authenticator (instead of e.g. Sso `Authenticator`) to make it work without an external authentication system.
 - Added support for `ignore_content_types` parameter in `UnreadArticlesResolver` used in generated/personalized e-mails. Parameter excludes articles of certain content types and avoids their use in generated e-mails. remp/remp#973
-- Added public preview for emails (templates), accessible without authentication. Preview link is accessible in each email detail eg.: _(http://mailer.remp.press/template/show/1)_.  remp/remp#581
+- Added public preview for emails (templates), accessible without authentication. Preview link is accessible in each email detail eg.: _(http://mailer.subscription.agora.md/template/show/1)_.  remp/remp#581
 - Added API endpoint `/api/v1/mailers/render-template`. Returns a rendered HTML email. remp/remp#581
 - Added widget for `ArticleUrlParserGenerator`. remp/remp#946
 - Added demo user subscriptions in `demo:seed` command.
@@ -926,14 +926,14 @@ If you're not sure if your database is in UTC, follow these steps to verify and 
 - Updated major portion of dependencies. Laravel was not updated yet.
 - Added parameter `article_id` to `AggregatePageviewLoadJob` and `AggregatePageviewTimespentJob` commands.
 - Fixed broken functionality of the segments flag `is_article` (available in pageview category). remp/remp#716
-- Added health check _(http://beam.remp.press/health)_ for database, Redis, storage and logging. remp/remp#735
+- Added health check _(http://beam.subscription.agora.md/health)_ for database, Redis, storage and logging. remp/remp#735
 - Added "Content Type" to article detail information.
 - Fixed reseting `paid_at` column in `conversions` table on each row update. remp/remp#738
 
 ### [Campaign]
 
 - Fixed listing of banners over API (`/api/banners`).
-- Added health check _(http://campaign.remp.press/health)_ for database, Redis, storage and logging. remp/remp#735
+- Added health check _(http://campaign.subscription.agora.md/health)_ for database, Redis, storage and logging. remp/remp#735
 
 ### [Mailer]
 
@@ -943,14 +943,14 @@ If you're not sure if your database is in UTC, follow these steps to verify and 
   - File restart moved to `config.local.neon.example` as example configuration.
 - Added parameter `with_mail_types` for `GET /api/v1/mailers/templates` endpoint, allowing to add details about mail_types assigned to templates. Documentation for the endpoint added. remp/crm#1450
 - Added method to use Redis `ping()` command within MailCache. remp/remp#735
-- Added health check _(http://mailer.remp.press/health)_ for database, Redis, storage and logging. remp/remp#735
+- Added health check _(http://mailer.subscription.agora.md/health)_ for database, Redis, storage and logging. remp/remp#735
 - Added graceful shutdown to `MailWorkerCommand` (`worker:mail`) via `Tomaj\Hermes\Restart\RestartInterface`. remp/remp#736
 - Add missing indexes to mail_logs table. remp/remp#750
 
 ### [Sso]
 
 - Updated major portion of dependencies. Laravel was not updated yet.
-- Added health check _(http://sso.remp.press/health)_ for database, Redis, storage and logging. remp/remp#735
+- Added health check _(http://sso.subscription.agora.md/health)_ for database, Redis, storage and logging. remp/remp#735
 
 ## [0.14.0] - 2020-09-29
 
@@ -1259,7 +1259,7 @@ _Note: generated binaries are the same as in 0.8.1, no need to deploy them if yo
   Please change following line in your `.env` file in Mailer:
 
   ```
-  SSO_ERROR_URL=http://mailer.remp.press/sign/error
+  SSO_ERROR_URL=http://mailer.subscription.agora.md/sign/error
   ```
 
 

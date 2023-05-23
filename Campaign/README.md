@@ -128,7 +128,7 @@ into one big JS snippet including Campaign and Beam functionality.
         }
     });
     // change URL to location of CAMPAIGN remplib.js
-    load("http://campaign.remp.press/assets/lib/js/remplib.js");
+    load("http://campaign.subscription.agora.md/assets/lib/js/remplib.js");
 })(window, document);
 
 var rempConfig = {
@@ -147,7 +147,7 @@ var rempConfig = {
     browserId: String,
     
     // optional, controls where cookies (RTM - REMP's UTM parameters of visit) are stored
-    cookieDomain: ".remp.press",
+    cookieDomain: ".subscription.agora.md",
 
     // optional, controls which type of storage should be used by default (`local_storage` or `cookie`)
     // default is `local_storage`
@@ -167,7 +167,7 @@ var rempConfig = {
     // required, Campaign specific options
     campaign: {
         // required, URL host of REMP Campaign
-        url: "http://campaign.remp.press",
+        url: "http://campaign.subscription.agora.md",
         
         // Additional params that will be appended links within displayed banner
         //
@@ -370,7 +370,7 @@ You can use created snippets by adding `{{ snippet_name }}` to one of the fields
 
 Campaign provides a simple API for several tasks described bellow.
 
-All examples use `http://campaign.remp.press` as a base domain. Please change the host to the one you use
+All examples use `http://campaign.subscription.agora.md` as a base domain. Please change the host to the one you use
 before executing the examples.
 
 All examples use `XXX` as a default value for authorization token, please replace it with the
@@ -424,7 +424,7 @@ Each one-time banner has to specify its expiration date and a user it shows to (
 
 ```shell
 curl -X POST \
-  http://campaign.remp.press/api/banners/[BANNER_ID]/one-time-display \
+  http://campaign.subscription.agora.md/api/banners/[BANNER_ID]/one-time-display \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
@@ -457,7 +457,7 @@ $context = stream_context_create([
     ]
 );
 $bannerId = 1;
-$response = file_get_contents("http://campaign.remp.press/api/banners/{$bannerId}/one-time-display", false, $context);
+$response = file_get_contents("http://campaign.subscription.agora.md/api/banners/{$bannerId}/one-time-display", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -513,7 +513,7 @@ Path parameters:
 
 ```shell
 curl -X POST \
-  http://campaign.remp.press/api/segment-cache/provider/crm_segment/code/example_testing_segment/add-user \
+  http://campaign.subscription.agora.md/api/segment-cache/provider/crm_segment/code/example_testing_segment/add-user \
   -H 'Accept: application/json' \
   -H 'Authorization: Bearer XXX' \
   -H 'Content-Type: application/json' \
@@ -545,7 +545,7 @@ $context = stream_context_create([
 );
 $segmentProvider = "crm_segment";
 $segmentCode = "example_testing_segment";
-$response = file_get_contents("http://campaign.remp.press/api/segment-cache/provider/{$segmentProvider}/code/{$segmentCode}/add-user", false, $context);
+$response = file_get_contents("http://campaign.subscription.agora.md/api/segment-cache/provider/{$segmentProvider}/code/{$segmentCode}/add-user", false, $context);
 // process response (raw JSON string)
 ```
 
@@ -570,7 +570,7 @@ Response with 404 HTTP code:
 
 ## Healthcheck
 
-Route `http://campaign.remp.press/health` provides health check for database, Redis, storage and logging.
+Route `http://campaign.subscription.agora.md/health` provides health check for database, Redis, storage and logging.
 
 Returns:
 

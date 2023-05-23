@@ -136,23 +136,23 @@ Following is list of available hosts. We advise you to add them to your
 
 ```bash
 # CAMPAIGN
-127.0.0.1 campaign.remp.press # web administration
+127.0.0.1 campaign.subscription.agora.md # web administration
 
 # MAILER
-127.0.0.1 mailer.remp.press # web administration
+127.0.0.1 mailer.subscription.agora.md # web administration
 
 # BEAM
-127.0.0.1 beam.remp.press # web administration
-127.0.0.1 tracker.beam.remp.press # event tracker API; swagger @ http://tracker.beam.remp.press/swagger.json
-127.0.0.1 segments.beam.remp.press # segments API; swagger @ http://segments.beam.remp.press/swagger.json
+127.0.0.1 beam.subscription.agora.md # web administration
+127.0.0.1 tracker.beam.subscription.agora.md # event tracker API; swagger @ http://tracker.beam.subscription.agora.md/swagger.json
+127.0.0.1 segments.beam.subscription.agora.md # segments API; swagger @ http://segments.beam.subscription.agora.md/swagger.json
 
 # SSO
-127.0.0.1 sso.remp.press # web administration and API
+127.0.0.1 sso.subscription.agora.md # web administration and API
 
 # SERVICE APPS
-127.0.0.1 adminer.remp.press # adminer for manipulating with MySQL
-127.0.0.1 mailhog.remp.press # mailhog for catching and debugging sent emails
-127.0.0.1 kibana.beam.remp.press # kibana for manipulating with Elastic data
+127.0.0.1 adminer.subscription.agora.md # adminer for manipulating with MySQL
+127.0.0.1 mailhog.subscription.agora.md # mailhog for catching and debugging sent emails
+127.0.0.1 kibana.beam.subscription.agora.md # kibana for manipulating with Elastic data
 ```
 
 > Note: If you use Docker Toolbox, the IP won't be `127.0.0.1`. Use `docker-machine ls` to get IP address of the machine.
